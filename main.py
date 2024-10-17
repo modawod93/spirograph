@@ -11,18 +11,21 @@ def random_color():
     b = random.randint(0, 255)
     return (r, g, b)
 
-speed = [0, 10, 6, 3, 1, 10, 0, 0]
+# speed = [0, 10, 6, 3, 1, 10, 0, 0]
 
-tim.speed(random.choice(speed))
-tod.speed(random.choice(speed))
+# tim.speed(random.choice(speed))
+# tod.speed(random.choice(speed))
 
-def draw_spinograph(size_of_gap):
+tim.speed(0)
+tod.speed(0)
+
+def draw_spirograph(size_of_gap):
     for _ in range(int(360 / size_of_gap)):
         tod.color(random_color())
         tod.circle(50)
         tod.setheading(tod.heading() + size_of_gap)
 
-def not_draw_spinograph():
+def not_draw_spirograph():
     for _ in range(100):    
         tim.color(random_color())
         tim.circle(100)
@@ -30,8 +33,8 @@ def not_draw_spinograph():
 
 # This function will alternate between tim and tod to give the effect of simultaneous drawing
 def alternate_drawing():
-    draw_spinograph(5)
-    not_draw_spinograph()
+    draw_spirograph(5)
+    not_draw_spirograph()
 
 # Use ontimer to call the drawing functions without using threads
 def draw_tim():
